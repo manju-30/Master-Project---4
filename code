@@ -1,0 +1,39 @@
+while true
+    action = input('Press Command : ', 's');
+    %Press "W" to move forward 
+    %Press "W" to move fast forward
+    %Press "A" to move backward
+    %Press "D" to move left  
+    %Press "S" to move right 
+    %Press "X" to stop
+    %Press "Q" to Quit
+    if action == 'S'
+        brick.MoveMotor('A', 50);
+        brick.MoveMotor('D', 50);
+        disp('Moving forward');
+    elseif action == 'R'
+        brick.MoveMotor('A', -100);
+        brick.MoveMotor('D', -100);
+        disp('Moving fast forward');
+    elseif action == 'W'
+        brick.MoveMotor('A', -50);
+        brick.MoveMotor('D', -50);
+        disp('Moving backward');
+    elseif action == 'D'
+        brick.MoveMotor('A', 70);
+        brick.MoveMotor('D', -50);
+        disp('Moving Left');
+    elseif action == 'A'
+        brick.MoveMotor('D', 70);
+        brick.MoveMotor('A', -50);
+
+        disp('Moving Right');
+    elseif action == 'X'
+        brick.StopAllMotors(0);
+        disp('Stopped');
+    elseif action == 'Q'
+        break;
+    else
+        disp('Invalid input');
+    end
+end
